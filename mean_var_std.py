@@ -1,34 +1,35 @@
-def calculate(inputArr):
-    import numpy as np
-    if len(inputArr) < 9:
+import numpy as np
+
+def calculate(list):
+    if len(list) < 9:
         return 'List must contain nine numbers'
-    inputArr = np.array(inputArr).reshape(3,3)
+    list = np.array(list).reshape(3,3)
     # calculating mean for numpy array
-    mean_ax1 = inputArr.mean(axis=0)
-    mean_ax2 = inputArr.mean(axis=1)
-    mean_flat = inputArr.flatten().mean()
+    mean_ax1 = list.mean(axis=0)
+    mean_ax2 = list.mean(axis=1)
+    mean_flat = list.flatten().mean()
     #calculate variance for numpy array
-    var_ax1 = inputArr.var(axis=0)
-    var_ax2 = inputArr.var(axis=1)
-    var_flat = inputArr.flatten().var()
+    var_ax1 = list.var(axis=0)
+    var_ax2 = list.var(axis=1)
+    var_flat = list.flatten().var()
     #calculate standard deviation for numpy array
-    std_ax1 = inputArr.std(axis=0)
-    std_ax2 = inputArr.std(axis=1)
-    std_flat = inputArr.flatten().std()
+    std_ax1 = list.std(axis=0)
+    std_ax2 = list.std(axis=1)
+    std_flat = list.flatten().std()
     #find max in numpy array
-    max_ax1 = inputArr.max(axis=0)
-    max_ax2 = inputArr.max(axis=1)
-    max_flat = inputArr.flatten().max()
+    max_ax1 = list.max(axis=0)
+    max_ax2 = list.max(axis=1)
+    max_flat = list.flatten().max()
     #find min in numpy array
-    min_ax1 = inputArr.min(axis=0)
-    min_ax2 = inputArr.min(axis=1)
-    min_flat = inputArr.flatten().min()
+    min_ax1 = list.min(axis=0)
+    min_ax2 = list.min(axis=1)
+    min_flat = list.flatten().min()
     #calculate sum for numpy array
-    sum_ax1 = inputArr.sum(axis=0)
-    sum_ax2 = inputArr.sum(axis=1)
-    sum_flat = inputArr.sum()
+    sum_ax1 = list.sum(axis=0)
+    sum_ax2 = list.sum(axis=1)
+    sum_flat = list.sum()
     
-    output = {
+    calculations = {
         'mean' : [mean_ax1, mean_ax2, mean_flat],
         'variance' : [var_ax1, var_ax2, var_flat],
         'standard deviation' : [std_ax1, std_ax2, std_flat],
@@ -37,4 +38,4 @@ def calculate(inputArr):
         'sum' : [sum_ax1, sum_ax2, sum_flat]
     }
     
-    return output
+    return calculations
